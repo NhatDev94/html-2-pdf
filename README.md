@@ -1,0 +1,2 @@
+- scale
+- Textarea chuyen sang pdf bi loi, phia tren chu bi mat
