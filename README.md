@@ -1,2 +1,3 @@
-- scale
-- Textarea chuyen sang pdf bi loi, phia tren chu bi mat
+- scale là gì?
+- không được dùng trực tiếp textarea/div Contenteditable mà phải chuyển về thẻ div,p trước khi chuyển sang image
+- Vẫn còn lỗi xuống dòng (chắc phải sau khi blur phải hiện thẻ div đè lên textarea)

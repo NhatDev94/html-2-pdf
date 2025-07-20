@@ -11,7 +11,7 @@ export function ReactToPdf({ children, containRef }: ReactToPdfProps) {
   return (
     <div
       ref={containRef}
-      className="w-full relative bg-white text-base"
+      className="w-full relative bg-white text-base z-10"
       style={{ paddingBottom: `${percent}%` }} // or use oklch(62.2345% 0.2579 264.22) for a different color
     >
       <div className="absolute w-full h-full top-0 left-0 p-[5%] border-4 border-green-500">
