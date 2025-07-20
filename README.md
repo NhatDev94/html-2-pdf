@@ -20,3 +20,45 @@
    - vẽ hết nội dung
    - ko bị lỗi xuống dòng
    - bị mờ: thư viện cho config
+
+=============
+FEATURE
+
+1.  Theme  
+    có vài theme để chọn
+    khi người dùng chuyển theme thì phải fill thông tin đã nhập vào theme mới (ĐỐI VỚI CÁC BLOCK TÙY CHỈNH THÌ PHẢI LÀM SAO)
+
+2.  Tạo các block
+    Thông tin liên hệ
+    Mục tiêu nghê nghiệp
+    Kinh nghiệm làm việc
+    Kỹ năng
+    Học vấn
+    Ngôn ngữ
+    Tùy chỉnh
+
+    - Ngoài block tùy chỉnh ra. Các block khác nên có các option
+
+3.  Format
+    Phải quản lí các block bằng state
+    Ví dụ:
+    {
+    block_id
+    title: {
+    text
+    isBold
+    isItalic
+    isUnderline ( CHƯA có trường hợp nhiều UNDERLINE trong 1 đoạn text )
+    }
+    description: [
+    {
+    description_id
+    text
+    isBold
+    isItalic
+    isUnderline
+    }
+    ]
+    }
+
+=============
