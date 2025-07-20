@@ -75,7 +75,7 @@ export function BlockItem({
     <div
       ref={ref}
       className={clsx(
-        "w-fit min-w-40 relative text-black",
+        "w-fit min-w-40 relative text-black border-none outline-none",
         type === "title" && "font-bold text-3xl mb-4",
         type === "description" && "font-normal text-base mb-2"
       )}
