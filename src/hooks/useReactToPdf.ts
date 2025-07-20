@@ -1,6 +1,7 @@
-import html2canvas from "html2canvas-pro";
 import jsPDF from "jspdf";
 import { useRef } from "react";
+
+import { toPng } from "html-to-image";
 
 export function useReactToPdf() {
   const containRef = useRef<HTMLDivElement | null>(null);
@@ -13,29 +14,12 @@ export function useReactToPdf() {
     hi?.children[0].replaceWith(image);
   };
 
-  const replaceTextareaToDiv = (cloneChild: HTMLElement) => {
-    const els = cloneChild.querySelectorAll("textarea");
-    els.forEach((el) => {
-      const div = document.createElement("div");
-      div.textContent = el.value;
-      div.className = el.className;
-      el.replaceWith(div);
-    });
-  };
-
   const drawImage = async (element: HTMLElement) => {
-    const child = element.children[0];
-    const cloneChild = child.cloneNode(true) as HTMLElement;
-    cloneChild.classList.add("z-50", "w-full", "h-full");
-
-    replaceTextareaToDiv(cloneChild);
-
-    element.appendChild(cloneChild);
-    const canvas = await html2canvas(element, {
-      scale: 2,
+    const url = await toPng(element, {
+      pixelRatio: 2,
+      backgroundColor: "white",
     });
-    element.removeChild(cloneChild);
-    return canvas.toDataURL("image/png");
+    return url;
   };
 
   const toPDF = async () => {
